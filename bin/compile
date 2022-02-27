@@ -47,8 +47,8 @@ fi
 # Extract commands from BUILDPACK_RUN config var
 if [[ -f "$ENV_DIR/BUILDPACK_RUN" ]]; then
   BUILDPACK_RUN_COMMANDS=$(cat "$ENV_DIR/BUILDPACK_RUN")
-elif [[ -f buildpack-run.sh ]]; then
-  BUILDPACK_RUN_COMMANDS=./buildpack-run.sh
+elif [[ -f build.sh ]]; then
+  BUILDPACK_RUN_COMMANDS=./build.sh
 else
   echo "Error: can't apply buildpack" | arrow-err
   cat <<EOF | indent-err
